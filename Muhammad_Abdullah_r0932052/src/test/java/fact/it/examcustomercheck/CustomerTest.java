@@ -1,8 +1,9 @@
 package fact.it.examcustomercheck;
 
-import fact.it.examcustomercheck.model.Customer;
+import fact.it.examcustomercheck.entities.Customer;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
