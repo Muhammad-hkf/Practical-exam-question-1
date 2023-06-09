@@ -33,7 +33,7 @@ public class Customer {
         return citizen;
     }
 
-    public void setCitizen(boolean citizen) {
+    public void  setCitizen(boolean citizen) {
         this.citizen = citizen;
     }
 
