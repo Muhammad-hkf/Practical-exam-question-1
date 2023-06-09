@@ -1,11 +1,12 @@
 package fact.it.examcustomercheck;
 
-import fact.it.examcustomercheck.model.Customer;
-import fact.it.examcustomercheck.model.Visit;
+import fact.it.examcustomercheck.entities.Customer;
+import fact.it.examcustomercheck.entities.Visit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class VisitTest {
@@ -20,7 +21,6 @@ public class VisitTest {
         customer.setYearOfRegistration(2020);
         visit.setCustomer(customer);
     }
-
 
 
     @Test
@@ -70,6 +70,7 @@ public class VisitTest {
         visit.setExitWeight(3);
         assertEquals(0, visit.getCost());
     }
+
     //alternative test for cost
     @Test
     public void testGetCost_LessThanOrEqualTo7KgAndMembershipAgeGreaterThan5_2() {
@@ -78,6 +79,7 @@ public class VisitTest {
         visit.setExitWeight(5);
         assertEquals(0, visit.getCost());
     }
+
     @Test
     public void testGetCost_LessThanOrEqualTo7KgAndMembershipAgeGreaterThan5_3() {
         customer.setYearOfRegistration(2018);
@@ -85,6 +87,7 @@ public class VisitTest {
         visit.setExitWeight(5);
         assertEquals(14, visit.getCost());
     }
+
     @Test
     public void testGetCost_LessThanOrEqualTo50Kg() {
         visit.setEnterWeight(30);
@@ -107,6 +110,7 @@ public class VisitTest {
         visit.setExitWeight(80);
         assertEquals(300, visit.getCost());
     }
+
     @Test
     public void testGetCost_EqualTo50Kg() {
         visit.setEnterWeight(180);
