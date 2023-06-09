@@ -34,12 +34,12 @@ public class Visit {
     }
 
     public int getDepositedWeight() {
-        return exitWeight - enterWeight;
+        return this.enterWeight - this.exitWeight;
     }
 
     public int getMembershipAge(){
         int year = Calendar.getInstance().get(Calendar.YEAR);
-        return year-customer.getYearOfRegistration();
+        return year-this.customer.getYearOfRegistration();
     }
 
     public  int getCost(){
@@ -55,6 +55,6 @@ public class Visit {
 
     @Override
     public String toString() {
-        return  customer.getName() +" registered in "+customer.getYearOfRegistration() +" has deposited "+getDepositedWeight()+"kg of waste: Cost = "+ getCost()+" euro.";
+        return  this.customer.getName() +" registered in "+this.customer.getYearOfRegistration() +" has deposited "+getDepositedWeight()+"kg. of waste: Cost = "+ getCost()+" euro.";
     }
 }
